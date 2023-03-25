@@ -14,9 +14,12 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Home", link: "home" },
-  { label: "About", link: "about" },
-  { label: "Projects", link: "projects" },
-  { label: "Contact", link: "contact" },
+  { label: "Sobre mí", link: "about" },
+  { label: "Tecnologías", link: "technology" },
+  { label: "Proyectos", link: "projects" },
+  { label: "Recomendaciones", link: "recommendations" },
+  { label: "Blog", link: "blog" },
+  { label: "Contacto", link: "contact" },
 ];
 
 export default function Navbar() {
