@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import Background from "./Background";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <main className="flex flex-col items-center justify-center flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to <a className="text-blue-600">My Dev Portfolio</a>
-        </h1>
-      </main>
+    <div className="hero">
+      <Background />
     </div>
   );
 };

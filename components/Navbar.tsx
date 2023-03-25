@@ -13,27 +13,19 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", link: "home" },
   { label: "Sobre mí", link: "about" },
   { label: "Tecnologías", link: "technology" },
   { label: "Proyectos", link: "projects" },
-  { label: "Recomendaciones", link: "recommendations" },
   { label: "Blog", link: "blog" },
   { label: "Contacto", link: "contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const pathname = usePathname();
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="flex items-center justify-between w-full px-6 py-4 mx-auto text-white bg-gray-900 md:px-8 md:py-6">
+      <div className="flex items-center justify-between w-full px-6 py-4 mx-auto text-white bg-navbar md:px-8 md:py-6">
         <div className="flex items-center">
           <Link
             to="home"
@@ -47,12 +39,6 @@ export default function Navbar() {
         </div>
         <div className="flex items-center">
           <button
-            className="p-1 text-gray-400 transition-colors duration-200 rounded hover:text-blue-500"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? <RiSunLine /> : <RiMoonFill />}
-          </button>
-          <button
             className="p-1 ml-3 text-gray-400 transition-colors duration-200 rounded hover:text-blue-500 md:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -62,7 +48,7 @@ export default function Navbar() {
         <div
           className={`${
             isOpen ? "" : "hidden"
-          } w-full px-2 py-4 mt-2 text-sm bg-gray-900 md:flex md:items-center md:justify-between md:px-0 md:py-0 md:mt-0 md:bg-transparent`}
+          } w-full px-2 py-4 mt-2 text-sm md:flex md:items-center md:justify-between md:px-0 md:py-0 md:mt-0 md:bg-transparent`}
         >
           <div className="flex flex-col items-start justify-end w-full md:flex-row">
             {navItems.map((item) => (
